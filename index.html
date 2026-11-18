@@ -41,7 +41,7 @@ nav ul a:hover{color:var(--ink)}
 @keyframes rot{to{transform:rotate(360deg)}}
 @media(max-width:700px){.badge{display:none}}
 
-.strip{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);padding:1.2rem 0}
+.cut{position:relative;max-width:680px;margin:3.5rem auto 0;border-top:2px dashed var(--mute);height:0}.sc{position:absolute;top:-33px;left:0;width:100px;height:auto;animation:travel 7s linear infinite}.sc path,.sc circle{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round}.sc g{transform-box:view-box;transform-origin:60px 30px}.sc .b1{animation:c1 .5s ease-in-out infinite alternate}.sc .b2{animation:c2 .5s ease-in-out infinite alternate}@keyframes travel{from{left:0}to{left:calc(100% - 100px)}}@keyframes c1{from{transform:rotate(-13deg)}to{transform:rotate(1deg)}}@keyframes c2{from{transform:rotate(13deg)}to{transform:rotate(-1deg)}}.tape{height:14px;border-radius:99px;margin-bottom:1.8rem;background:repeating-linear-gradient(-45deg,var(--ink) 0 14px,transparent 14px 28px);background-size:40px 100%;animation:tape 1s linear infinite;opacity:.85}@keyframes tape{to{background-position:40px 0}}.strip{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);padding:1.2rem 0}
 .strip div{display:inline-block;font:900 clamp(2rem,6vw,4rem) Unbounded,sans-serif;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px #8e9199;animation:slide 30s linear infinite}
 .strip b{-webkit-text-stroke:0;color:var(--ink);margin:0 2rem;font-weight:400}
 @keyframes slide{to{transform:translateX(-50%)}}
@@ -90,7 +90,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 @media(max-width:760px){.sticky{display:block;position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:40}.sticky .btn{width:100%;justify-content:center}}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s}
 .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.badge svg,.strip div,.live i{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.badge svg,.strip div,.live i,.sc,.sc g,.tape{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -102,7 +102,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
   <div class="live"><i></i>Reserva online abierta</div>
   <h1 class="d">Jony<span class="o">Style</span></h1>
   <p>Te ayudamos a verte como tu mejor versión.</p>
-  <div class="row"><a class="btn solid" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reserva tu cita →</a><a class="btn" href="#servicios">Ver servicios</a></div>
+  <div class="row"><a class="btn solid" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reserva tu cita →</a><a class="btn" href="#servicios">Ver servicios</a></div><div class="cut" aria-hidden="true"><svg class="sc" viewBox="0 0 120 60"><g class="b1"><path d="M60 30L116 24M60 30L28 44"/><circle cx="20" cy="48" r="9"/></g><g class="b2"><path d="M60 30L116 36M60 30L28 16"/><circle cx="20" cy="12" r="9"/></g></svg></div>
 </div>
 <div class="badge" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#c">Reserva tu cita · Reserva tu cita ·</textPath></text></svg><span>✂</span></div>
 </header>
@@ -135,7 +135,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 <section class="team" id="barbero"><div class="wrap">
   <div class="rv"><span class="tag">03 — Barbero</span><h2 class="d">Facundo<span>Campanini</span></h2></div>
   <div class="rv">
-    <p>Barbero con estilo propio, entre Argentina y España. Cada corte se piensa para ti: tu cara, tu pelo y tu forma de vestir.</p>
+    <div class="tape" aria-hidden="true"></div><p>Barbero con estilo propio, entre Argentina y España. Cada corte se piensa para ti: tu cara, tu pelo y tu forma de vestir.</p>
     <div class="chips"><i>Fade</i><i>Freestyle</i><i>Color</i><i>Facial</i></div>
     <a class="btn" href="https://www.instagram.com/barberjonystyle/" target="_blank" rel="noopener">Ver trabajos en Instagram</a>
   </div>
