@@ -3,220 +3,152 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
 <title>JONY STYLE · Barbería</title>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#09090c;--panel:#131318;--panel2:#1b1b22;--ink:#f6f1e9;--mute:#9a97a3;--line:#26262e;--a:#ff7a1a;--b:#ff2d6f;--grad:linear-gradient(110deg,var(--a),var(--b));box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f1e9;--panel:#ece5d9;--panel2:#e2dacb;--ink:#15151a;--mute:#5f5b66;--line:#d4ccbd}}
-:root[data-theme="light"]{--bg:#f6f1e9;--panel:#ece5d9;--panel2:#e2dacb;--ink:#15151a;--mute:#5f5b66;--line:#d4ccbd}
+:root{--bg:#2b2d33;--ink:#f3f3f0;--mute:#a6a8b0;--line:#42454d;--live:#ff3b30;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--a);outline-offset:3px}
-.wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem;position:relative}
-h1,h2,h3,.d{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;text-transform:uppercase;line-height:.88;margin:0;letter-spacing:.01em}
-.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--grad);color:#fff;padding:1rem 1.8rem;font:800 1rem Manrope,sans-serif;text-decoration:none;border-radius:999px;border:0;cursor:pointer;box-shadow:0 10px 40px -10px var(--b);transition:transform .25s,box-shadow .25s}
-.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 18px 50px -10px var(--a)}
-.btn.ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);box-shadow:none}
-.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 1.5rem}
+.d{font-family:Unbounded,sans-serif;text-transform:uppercase;line-height:.95;margin:0}
+.btn{display:inline-flex;align-items:center;gap:.7rem;border:1px solid var(--ink);padding:.9rem 1.6rem;border-radius:999px;font-weight:700;font-size:.9rem;letter-spacing:.04em;transition:.3s}
+.btn:hover,.btn.solid{background:var(--ink);color:#000}
+.btn.solid:hover{background:transparent;color:var(--ink)}
 
-#spot{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(520px circle at var(--x,70%) var(--y,25%),color-mix(in srgb,var(--a) 18%,transparent),transparent 60%)}
-main,nav,footer{position:relative;z-index:1}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
-.logo{font:900 1.9rem "Big Shoulders Display",sans-serif;text-decoration:none;letter-spacing:.04em}
-nav .btn{padding:.65rem 1.3rem;font-size:.9rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(43,45,51,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font:900 1rem Unbounded,sans-serif;letter-spacing:.18em}
+nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0;font-size:.85rem;color:var(--mute)}
+nav ul a:hover{color:var(--ink)}
+@media(max-width:760px){nav ul{display:none}}
 
-.hero{padding:4rem 0 4.5rem;min-height:88vh;display:flex;align-items:center}
-.hero .wrap{display:grid;grid-template-columns:1.5fr .8fr;gap:2rem;align-items:center;width:100%}
-.kick{display:inline-flex;gap:.6rem;align-items:center;border:1px solid var(--line);background:var(--panel);padding:.4rem 1rem;border-radius:99px;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4rem}
-.kick i{width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 12px var(--a);animation:pulse 1.6s infinite}
-@keyframes pulse{50%{opacity:.3}}
-.hero h1{font-size:clamp(6rem,19vw,16rem)}
-.hero h1 span{display:block}
-.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink);margin-top:-.05em}
-.hero p{max-width:30ch;font-size:1.25rem;color:var(--mute);margin:1.5rem 0 2rem}
-.row{display:flex;gap:1rem;flex-wrap:wrap}
-.pole-box{display:flex;justify-content:center}
-.pole{position:relative;width:96px;height:min(520px,62vh);border-radius:50px;border:3px solid var(--ink);overflow:hidden;background:repeating-linear-gradient(-45deg,var(--a) 0 26px,var(--ink) 26px 52px,var(--b) 52px 78px,var(--ink) 78px 104px);background-size:100% 147px;animation:spin 1.8s linear infinite;box-shadow:0 0 80px -10px var(--b)}
-.pole::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.45),transparent 30%,transparent 62%,rgba(0,0,0,.5))}
-@keyframes spin{to{background-position:0 147px}}
-@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.pole{width:64px;height:90px;border-radius:30px}.pole-box{order:-1;justify-content:flex-start}.hero{padding-top:2rem}}
+.hero{min-height:calc(100vh - 68px);display:flex;flex-direction:column;justify-content:center;position:relative;padding:3rem 0 5rem;text-align:center}
+.live{display:inline-flex;align-items:center;gap:.6rem;justify-content:center;color:var(--mute);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2rem}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 14px var(--live);animation:pulse 1.5s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.hero h1{font-weight:900;font-size:clamp(3.8rem,15.5vw,13.5rem);letter-spacing:-.04em}
+.hero h1 .o{color:transparent;-webkit-text-stroke:1.5px var(--ink);display:block}
+.hero p{color:var(--mute);margin:2rem auto 2.4rem;max-width:34ch;font-size:1.1rem}
+.hero .row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.badge{position:absolute;right:max(1.5rem,4vw);bottom:2rem;width:130px;height:130px}
+.badge svg{width:100%;height:100%;animation:rot 16s linear infinite}
+.badge text{font:500 15px Unbounded,sans-serif;fill:var(--ink);letter-spacing:3px;text-transform:uppercase}
+.badge span{position:absolute;inset:0;display:grid;place-items:center;font-size:1.6rem}
+@keyframes rot{to{transform:rotate(360deg)}}
+@media(max-width:700px){.badge{display:none}}
 
-.strip{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);background:var(--panel)}
-.strip div{display:inline-block;padding:1rem 0;font:900 2.4rem "Big Shoulders Display",sans-serif;text-transform:uppercase;animation:slide 28s linear infinite}
-.strip b{color:var(--a);margin:0 1.4rem}
+.strip{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);padding:1.2rem 0}
+.strip div{display:inline-block;font:900 clamp(2rem,6vw,4rem) Unbounded,sans-serif;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px #6e717a;animation:slide 30s linear infinite}
+.strip b{-webkit-text-stroke:0;color:var(--ink);margin:0 2rem;font-weight:400}
 @keyframes slide{to{transform:translateX(-50%)}}
 
-section{padding:6.5rem 0}
-.tag{color:var(--a);font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;margin-bottom:1rem;display:block}
-h2.big{font-size:clamp(3.2rem,9vw,7rem);margin-bottom:3rem}
+section{padding:7rem 0}
+.tag{display:block;color:var(--mute);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:1.2rem}
+h2.d{font-weight:700;font-size:clamp(2rem,5.5vw,4.4rem);margin-bottom:3.5rem;letter-spacing:-.02em}
 
-.pick{display:grid;grid-template-columns:.85fr 1.15fr;gap:2rem}
-.opts{display:grid;gap:.5rem;align-content:start}
-.opts button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.3rem;border:1px solid var(--line);border-radius:14px;font:900 1.8rem "Big Shoulders Display",sans-serif;text-transform:uppercase;transition:.25s;background:var(--panel)}
-.opts button span{font:700 .8rem Manrope,sans-serif;color:var(--mute)}
-.opts button:hover{border-color:var(--a);transform:translateX(6px)}
-.opts button[aria-selected="true"]{background:var(--grad);border-color:transparent;color:#fff}
-.opts button[aria-selected="true"] span{color:#fff}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;min-height:360px;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;width:320px;height:320px;right:-100px;top:-100px;background:var(--grad);filter:blur(80px);opacity:.35;border-radius:50%}
-.card .n{position:absolute;right:1.4rem;bottom:-1.5rem;font:900 12rem "Big Shoulders Display",sans-serif;color:var(--line);line-height:1}
-.card h3{font-size:clamp(3rem,7vw,5.5rem);position:relative}
-.card p{color:var(--mute);max-width:36ch;position:relative;margin:1rem 0 0}
-.card .btn{align-self:flex-start;position:relative;margin-top:2rem}
-@media(max-width:800px){.pick{grid-template-columns:1fr}}
+.list{border-top:1px solid var(--line)}
+.row2{display:grid;grid-template-columns:70px 1.2fr 1.6fr 40px;gap:1rem;align-items:center;padding:2rem 1rem;border-bottom:1px solid var(--line);transition:background .35s,color .35s,padding .35s}
+.row2 .n{color:var(--mute);font-size:.85rem;font-variant-numeric:tabular-nums}
+.row2 h3{font:700 clamp(1.5rem,3.4vw,2.6rem) Unbounded,sans-serif;text-transform:uppercase;margin:0;letter-spacing:-.02em}
+.row2 p{margin:0;color:var(--mute);transition:color .35s}
+.row2 .ar{font-size:1.6rem;transition:transform .35s}
+.row2:hover{background:var(--ink);color:#000;padding-left:2rem}
+.row2:hover p,.row2:hover .n{color:#222}
+.row2:hover .ar{transform:rotate(-45deg)}
+@media(max-width:760px){.row2{grid-template-columns:40px 1fr 30px}.row2 p{grid-column:2/3}.row2 .ar{grid-row:1;grid-column:3}}
 
-.fade{background:var(--panel)}
-.fade .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.head{background:var(--panel2);border-radius:28px;padding:1.5rem;display:flex;justify-content:center}
-.head svg{width:min(300px,100%);height:auto}
-.fade input[type=range]{width:100%;accent-color:var(--a);margin:1.5rem 0 .6rem}
-.lv{display:flex;justify-content:space-between;font-weight:700;font-size:.85rem;color:var(--mute)}
-.fade h3{font-size:clamp(2.4rem,5vw,4rem);margin:.5rem 0 .6rem}
-.fade p{color:var(--mute);max-width:40ch;margin:0}
-@media(max-width:800px){.fade .wrap{grid-template-columns:1fr}}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.col{padding:2.5rem 2rem 2.5rem 0;border-right:1px solid var(--line);padding-left:2rem}
+.col:first-child{padding-left:0}
+.col:last-child{border-right:0}
+.col .d{font-size:3.5rem;font-weight:300;color:#7d808a;display:block;margin-bottom:1.2rem}
+.col h3{font:700 1.3rem Unbounded,sans-serif;text-transform:uppercase;margin:0 0 .6rem}
+.col p{margin:0;color:var(--mute);max-width:28ch}
+@media(max-width:760px){.cols{grid-template-columns:1fr}.col{border-right:0;border-bottom:1px solid var(--line);padding-left:0}}
 
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.step{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:1.8rem;transition:.3s}
-.step:hover{transform:translateY(-6px);border-color:var(--a)}
-.step .d{font-size:4.2rem;display:block;margin-bottom:.8rem}
-.step h3{font-size:1.9rem;margin-bottom:.5rem}
-.step p{margin:0;color:var(--mute);font-size:.95rem}
-@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.team{background:#33353c}.team .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:end}
+.team h2{font-size:clamp(3rem,9vw,8rem);margin:0;font-weight:900;letter-spacing:-.04em}
+.team h2 span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.team p{color:var(--mute);max-width:40ch}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.5rem 0 2rem}
+.chips i{font-style:normal;border:1px solid var(--line);padding:.4rem 1rem;border-radius:99px;font-size:.85rem}
+@media(max-width:800px){.team .wrap{grid-template-columns:1fr;gap:2rem}}
 
-.team .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
-.team .big2{font-size:clamp(4.5rem,13vw,10rem)}
-.team p{color:var(--mute);max-width:44ch}
-.chips{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.5rem 0 2rem}
-.chips i{font-style:normal;border:1px solid var(--line);background:var(--panel);padding:.45rem 1.1rem;border-radius:99px;font-size:.9rem;font-weight:700}
-@media(max-width:800px){.team .wrap{grid-template-columns:1fr}}
-
-.book{text-align:center;position:relative;overflow:hidden}
-.book::before{content:"";position:absolute;left:50%;top:50%;width:700px;height:700px;transform:translate(-50%,-50%);background:var(--grad);filter:blur(140px);opacity:.25;border-radius:50%}
-.book h2{font-size:clamp(4rem,13vw,10.5rem);margin-bottom:1.5rem;position:relative}
-.book p{color:var(--mute);margin:0 auto 2rem;max-width:40ch;position:relative}
-.book .row{justify-content:center;position:relative}
-footer{padding:2rem 0 6rem;text-align:center;color:var(--mute);font-size:.85rem;border-top:1px solid var(--line)}
+.cta{display:block;border-top:1px solid var(--line);padding:5rem 0;transition:background .4s,color .4s}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.cta .d{font-weight:900;font-size:clamp(3rem,12vw,10rem);letter-spacing:-.05em}
+.cta .ar{font-size:clamp(2.5rem,8vw,6rem);transition:transform .4s}
+.cta:hover{background:var(--ink);color:#000}
+.cta:hover .ar{transform:translateX(14px) rotate(-45deg)}
+footer{border-top:1px solid var(--line);padding:2rem 0 5.5rem;color:var(--mute);font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .sticky{display:none}
 @media(max-width:760px){.sticky{display:block;position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:40}.sticky .btn{width:100%;justify-content:center}}
-.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s}
 .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.pole,.strip div,.kick i{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.badge svg,.strip div,.live i{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div id="spot"></div>
-<nav><div class="wrap"><a class="logo" href="#top">JONY <span class="g">STYLE</span></a><a class="btn" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reservar</a></div></nav>
+<nav><div class="wrap"><a class="logo" href="#top">JONY STYLE</a>
+<ul><li><a href="#servicios">Servicios</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#barbero">Barbero</a></li></ul>
+<a class="btn" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reservar</a></div></nav>
 
-<main>
 <header class="hero" id="top"><div class="wrap">
-  <div>
-    <span class="kick"><i></i>Barbería · Argentina × España</span>
-    <h1><span class="g">Jony</span><span class="o">Style</span></h1>
-    <p>Te ayudamos a verte como tu mejor versión.</p>
-    <div class="row"><a class="btn" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reserva tu cita →</a><a class="btn ghost" href="#cortes">Ver servicios</a></div>
-  </div>
-  <div class="pole-box" aria-hidden="true"><div class="pole"></div></div>
-</div></header>
+  <div class="live"><i></i>Reserva online abierta</div>
+  <h1 class="d">Jony<span class="o">Style</span></h1>
+  <p>Te ayudamos a verte como tu mejor versión.</p>
+  <div class="row"><a class="btn solid" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reserva tu cita →</a><a class="btn" href="#servicios">Ver servicios</a></div>
+</div>
+<div class="badge" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#c">Reserva tu cita · Reserva tu cita ·</textPath></text></svg><span>✂</span></div>
+</header>
 
-<div class="strip" aria-hidden="true"><div>FADE<b>✂</b>FREESTYLE<b>✂</b>COLOR<b>✂</b>RAPADO<b>✂</b>BARBA<b>✂</b>FACIAL<b>✂</b>FADE<b>✂</b>FREESTYLE<b>✂</b>COLOR<b>✂</b>RAPADO<b>✂</b>BARBA<b>✂</b>FACIAL<b>✂</b></div></div>
+<div class="strip" aria-hidden="true"><div>Fade<b>✂</b>Freestyle<b>✂</b>Color<b>✂</b>Rapado<b>✂</b>Barba<b>✂</b>Facial<b>✂</b>Fade<b>✂</b>Freestyle<b>✂</b>Color<b>✂</b>Rapado<b>✂</b>Barba<b>✂</b>Facial<b>✂</b></div></div>
 
-<section id="cortes"><div class="wrap">
-  <span class="tag rv">Servicios</span>
-  <h2 class="big rv">Elige tu <span class="g">corte</span></h2>
-  <div class="pick rv">
-    <div class="opts" role="tablist" id="opts"></div>
-    <div class="card" aria-live="polite">
-      <div class="n" id="cn">01</div>
-      <div><h3 id="ct"></h3><p id="cd"></p></div>
-      <a class="btn" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reservar este servicio →</a>
-    </div>
-  </div>
-</div></section>
-
-<section class="fade"><div class="wrap">
-  <div class="head rv">
-    <svg viewBox="0 0 200 240" role="img" aria-label="Cabeza con degradado ajustable">
-      <defs>
-        <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop id="s1" offset=".4" stop-color="#17171c"/><stop id="s2" offset=".6" stop-color="#17171c" stop-opacity="0"/></linearGradient>
-        <clipPath id="hc"><ellipse cx="100" cy="125" rx="62" ry="82"/></clipPath>
-      </defs>
-      <rect x="34" y="198" width="132" height="42" rx="20" fill="#c9926f"/>
-      <ellipse cx="38" cy="130" rx="10" ry="18" fill="#d9a380"/><ellipse cx="162" cy="130" rx="10" ry="18" fill="#d9a380"/>
-      <ellipse cx="100" cy="125" rx="62" ry="82" fill="#e3b08e"/>
-      <g clip-path="url(#hc)"><rect x="30" y="40" width="140" height="140" fill="url(#fg)"/></g>
-      <path d="M52 78C54 38 80 24 102 24c26 0 46 18 48 54-10-14-26-22-50-22s-38 8-48 22z" fill="#17171c"/>
-      <circle cx="80" cy="132" r="4" fill="#2a1c15"/><circle cx="120" cy="132" r="4" fill="#2a1c15"/>
-      <path d="M86 168q14 8 28 0" stroke="#8a5238" stroke-width="3" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <div class="rv">
-    <span class="tag">Tu degradado</span>
-    <h3 id="fn">Medio</h3>
-    <p id="fd"></p>
-    <input type="range" id="fr" min="0" max="2" step="1" value="1" aria-label="Altura del degradado">
-    <div class="lv"><span>Bajo</span><span>Medio</span><span>Alto</span></div>
-    <div class="row" style="margin-top:1.8rem"><a class="btn" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Pedir mi fade →</a></div>
+<section id="servicios"><div class="wrap">
+  <span class="tag rv">01 — Servicios</span>
+  <h2 class="d rv">Lo que hacemos</h2>
+  <div class="list rv">
+    <a class="row2" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener"><span class="n">01</span><h3>Fade</h3><p>Degradado limpio y preciso, a la altura que tú quieras.</p><span class="ar">→</span></a>
+    <a class="row2" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener"><span class="n">02</span><h3>Freestyle</h3><p>Diseños y líneas a mano alzada. Un corte que nadie más tiene.</p><span class="ar">→</span></a>
+    <a class="row2" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener"><span class="n">03</span><h3>Color</h3><p>Decoloración, mechas y color para destacar.</p><span class="ar">→</span></a>
+    <a class="row2" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener"><span class="n">04</span><h3>Rapado</h3><p>Rapado cuidado, con acabado limpio y bien marcado.</p><span class="ar">→</span></a>
+    <a class="row2" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener"><span class="n">05</span><h3>Barba</h3><p>Perfilado y arreglo de barba para que encaje con tu corte.</p><span class="ar">→</span></a>
+    <a class="row2" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener"><span class="n">06</span><h3>Facial</h3><p>Limpieza y retirada de vello facial.</p><span class="ar">→</span></a>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <span class="tag rv">Cómo funciona</span>
-  <h2 class="big rv">Sencillo. <span class="g">Rápido.</span></h2>
-  <div class="steps rv">
-    <div class="step"><span class="d g">01</span><h3>Reserva</h3><p>Elige servicio, día y hora en Booksy.</p></div>
-    <div class="step"><span class="d g">02</span><h3>Llega</h3><p>Sin esperas: tu hueco está guardado.</p></div>
-    <div class="step"><span class="d g">03</span><h3>Corte</h3><p>Lo hablamos y lo adaptamos a tu cara y a tu pelo.</p></div>
-    <div class="step"><span class="d g">04</span><h3>Sal fino</h3><p>Con el acabado listo para el día a día.</p></div>
+<section id="proceso"><div class="wrap">
+  <span class="tag rv">02 — Proceso</span>
+  <h2 class="d rv">Sencillo y rápido</h2>
+  <div class="cols rv">
+    <div class="col"><span class="d">01</span><h3>Reserva</h3><p>Elige servicio, día y hora en Booksy.</p></div>
+    <div class="col"><span class="d">02</span><h3>Corte</h3><p>Lo hablamos y lo adaptamos a tu cara y a tu pelo.</p></div>
+    <div class="col"><span class="d">03</span><h3>Sal fino</h3><p>Con el acabado listo para el día a día.</p></div>
   </div>
 </div></section>
 
-<section class="team"><div class="wrap">
-  <div class="rv"><span class="tag">Barbero</span><h2 class="d big2">Facundo<br><span class="g">Campanini</span></h2></div>
+<section class="team" id="barbero"><div class="wrap">
+  <div class="rv"><span class="tag">03 — Barbero</span><h2 class="d">Facundo<span>Campanini</span></h2></div>
   <div class="rv">
     <p>Barbero con estilo propio, entre Argentina y España. Cada corte se piensa para ti: tu cara, tu pelo y tu forma de vestir.</p>
     <div class="chips"><i>Fade</i><i>Freestyle</i><i>Color</i><i>Facial</i></div>
-    <a class="btn ghost" href="https://www.instagram.com/barberjonystyle/" target="_blank" rel="noopener">Ver trabajos en Instagram</a>
+    <a class="btn" href="https://www.instagram.com/barberjonystyle/" target="_blank" rel="noopener">Ver trabajos en Instagram</a>
   </div>
 </div></section>
 
-<section class="book"><div class="wrap rv">
-  <h2>Tu próximo<br><span class="g">corte</span> te espera</h2>
-  <p>Reserva online en segundos y elige tu hora.</p>
-  <div class="row"><a class="btn" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reservar en Booksy →</a><a class="btn ghost" href="https://www.instagram.com/barberjonystyle/" target="_blank" rel="noopener">@barberjonystyle</a></div>
-</div></section>
-</main>
-
-<footer>JONY STYLE · Propuesta de diseño web</footer>
-<div class="sticky"><a class="btn" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reservar cita →</a></div>
+<a class="cta" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener"><div class="wrap"><span class="d">Reservar</span><span class="ar">→</span></div></a>
+<footer><div class="wrap"><span>JONY STYLE · Barbería</span><span>@barberjonystyle</span><span>Propuesta de diseño web</span></div></footer>
+<div class="sticky"><a class="btn solid" href="https://barberjonystyle.booksy.com/ig" target="_blank" rel="noopener">Reservar cita →</a></div>
 
 <script>
 (function(){
-  var S=[["Fade","Degradado limpio y preciso, a la altura que tú quieras."],["Freestyle","Diseños y líneas a mano alzada. Un corte que nadie más tiene."],["Color","Decoloración, mechas y color para destacar."],["Rapado","Rapado cuidado, con acabado limpio y bien marcado."],["Barba","Perfilado y arreglo de barba para que encaje con tu corte."],["Facial","Limpieza y retirada de vello facial."]];
-  var o=document.getElementById('opts');
-  function pad(n){return (n<10?'0':'')+n}
-  function sel(i){
-    [].forEach.call(o.children,function(b,j){b.setAttribute('aria-selected',j===i)});
-    document.getElementById('ct').textContent=S[i][0];
-    document.getElementById('cd').textContent=S[i][1];
-    document.getElementById('cn').textContent=pad(i+1);
-  }
-  S.forEach(function(s,i){var b=document.createElement('button');b.setAttribute('role','tab');b.innerHTML=s[0]+'<span>'+pad(i+1)+'</span>';b.onclick=function(){sel(i)};o.appendChild(b)});
-  sel(0);
-
-  var F=[["Bajo","La transición empieza cerca de la oreja. Discreto y muy clásico.",.55,.74],["Medio","El equilibrio perfecto: limpio sin ser demasiado marcado.",.4,.62],["Alto","Contraste máximo: la transición sube y el corte se ve más atrevido.",.24,.46]];
-  var r=document.getElementById('fr');
-  function fd(){var f=F[r.value];document.getElementById('fn').textContent=f[0];document.getElementById('fd').textContent=f[1];document.getElementById('s1').setAttribute('offset',f[2]);document.getElementById('s2').setAttribute('offset',f[3])}
-  r.addEventListener('input',fd);fd();
-
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  var sp=document.getElementById('spot');
-  addEventListener('pointermove',function(e){sp.style.setProperty('--x',e.clientX+'px');sp.style.setProperty('--y',e.clientY+'px')});
 })();
 </script>
 </body>
